@@ -1,5 +1,5 @@
 let classifier;
-let imageModelURL = 'Tu_Modelo'; // URL del modelo de Teachable Machine
+let imageModelURL = 'https://teachablemachine.withgoogle.com/models/14skEugkU/'; // URL del modelo de Teachable Machine
 let fileInput;
 let label = "";
 let img;
@@ -9,8 +9,9 @@ function preload() {
 }
 
 function setup() {
-  fileInput = createFileInput(handleFile); // Crea un input de archivo y llama a la función handleFile cuando se selecciona un archivo
   createCanvas(640, 480); // Crea un canvas de 640x480 píxeles
+  fileInput = createFileInput(handleFile); // Crea un input de archivo y llama a la función handleFile cuando se selecciona un archivo
+  fileInput.parent("buttons"); // Agrega el input de archivo al contenedor "buttons"
 }
 
 function classifyImage() {
